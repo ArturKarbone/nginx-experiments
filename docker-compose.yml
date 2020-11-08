@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  nginx:
+    image: ${DOCKER_REGISTRY-}nginx
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+     - "8888:80"
+   
+
+  invoicing:
+    image: ${DOCKER_REGISTRY-}invoicing
+    ports:
+     - "8080:80"
+    build:
+      context: .
+      dockerfile: Invoicing/Dockerfile
+
+  products.cmtpl:
+    image: ${DOCKER_REGISTRY-}productscmtpl
+    ports:
+     - "8081:80"
+    build:
+      context: .
+      dockerfile: Products.CMTPL/Dockerfile
+
+
+  products.mod:
+    image: ${DOCKER_REGISTRY-}productsmod
+    ports:
+     - "8082:80"
+    build:
+      context: .
+      dockerfile: Products.MOD/Dockerfile
+
+
+  sales:
+    image: ${DOCKER_REGISTRY-}sales
+    ports:
+     - "8083:80"
+    build:
+      context: .
+      dockerfile: Sales/Dockerfile
+

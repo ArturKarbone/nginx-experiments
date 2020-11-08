@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  invoicing:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  products.cmtpl:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  products.mod:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development    
+    ports:
+      - "80"    
+
+  sales:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development     
+    ports:
+      - "80"     
